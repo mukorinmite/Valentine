@@ -5,9 +5,9 @@ const finalScore = document.getElementById("final-score");
 
 const quizData = [
 
-    { question: "ermghh jd gw bikin ini..", options: ["Ok.."], answer: null },
+    { question: "ermghh jd gw bikin ini..", options: ["Ok.."], answer: null},
     { question: "ntar kalian tinggal kilik-klik aja.. Gw bikin quiz seputar gw gt..", options: [""], answer: null },
-    { question: "gw ga punya ide buat bikin apalagi soalnya buat Valentine:')" , options: [""], answer: null },
+    { question: "gw ga punya ide buat bikin apalagi soalnya buat Valentine:')" , options: [""], answer: null},
     { question: "Kita mulai quiz ya!", options: ["Ok"], answer: null },
     { question: "1.) What’s mukorinmite fav color?", options: ["Blue", "Black", "Green", "Ga ada"], answer: "Blue" },
     { question: "2.) Who's mukorinmite fav person?", options: ["Payoy", "Gwendilon", "Djhonyong", "her bf", "purnawijaw", "tiduardotkom" , "nelo", "her sister"], answer: "All" },
@@ -61,7 +61,8 @@ function nextQuestion(answer) {
 }
 
 function showFinalScore() {
-    finalScore.innerHTML = `Score: ${score} / ${quizData.length - 1}`;
+    let totalQuestion = quizData.filter(q=> q.answer !==null).length;
+    finalScore.innerHTML = `Score: ${score} / ${totalQuestion}`;
     scoreBox.style.display = "block";
 }
 
